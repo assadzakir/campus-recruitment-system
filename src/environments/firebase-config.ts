@@ -1,6 +1,11 @@
 /**
  * Created by assad on 1/25/17.
  */
+import {
+        AuthProviders,
+        AuthMethods
+
+} from 'angularfire2'
 
     // Initialize Firebase
 export  const firebaseConfig = {
@@ -10,3 +15,7 @@ export  const firebaseConfig = {
         storageBucket: "campus-recruitment-syste-d3c8c.appspot.com",
         messagingSenderId: "42904492866"
     };
+export const firebaseAuthConfig = {
+        provider: AuthProviders.Password,
+        method: AuthMethods.Password
+}

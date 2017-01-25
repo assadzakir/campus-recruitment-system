@@ -1,3 +1,25 @@
- <section>
-   <button md-raised-button color="accent" >  {{title}}</button>
- </section>
+<div>
+    <div>
+        <md-toolbar color="warn">
+            <span >Campus Recruitment System</span>
+            <span class="example-fill-remaining-space"></span>
+            <span routerLink="/login">Log in</span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <span routerLink="/signup">Sign up</span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+        </md-toolbar>
+        <router-outlet class="main"></router-outlet>
+    </div>
+</div>
+
+<div class="menu-centered">
+    <ul class="menu">
+        <li *ngIf="af.auth | async">LOGGED IN</li>
+        <li *ngIf="!(af.auth | async)">NOT LOGGED IN</li>
+        <!--<li><a href="https://blog.khophi.co/angularfire2-authentication/" target="new">Read: AngularFire2 Authentication Article</a></li>-->
+    </ul>
+</div>
