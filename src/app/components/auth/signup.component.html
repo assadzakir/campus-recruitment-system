@@ -24,6 +24,7 @@
     <!--</form>-->
   <!--</div>-->
 <!--</div>-->
+<md-card>
 <form #formData='ngForm'>
   <h2>Sign Up</h2>
   <md-input-container dividerColor="accent" style="width: 100%">
@@ -38,11 +39,17 @@
   <md-input-container dividerColor="accent" style="width: 100%">
     <input md-input type="password" placeholder="password" name="password" value="password" (ngModel)="password" required>
   </md-input-container>
+  <br>
+  <br>
   <md-radio-group (ngModel)="role" name="role" [disabled]="isDisabled" [align]="isAlignEnd ? 'end' : 'start'">
     <md-radio-button value="Student">Student</md-radio-button>
     <md-radio-button value="Company">Company</md-radio-button>
   </md-radio-group>
   <br>
+  <br>
   <button md-raised-button color="accent" (click)="onSubmit(formData)" [disabled]="!formData.valid">Submit</button>
+  <br>
+  <br>
   <a routerLink="/login">Already have an account?</a>
 </form>
+  </md-card>

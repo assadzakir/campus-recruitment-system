@@ -8,10 +8,11 @@
             &nbsp;
             &nbsp;
             <span routerLink="/signup">Sign up</span>
+
+            &nbsp;
+            &nbsp;
+            &nbsp;
             <span *ngIf="af.auth | async" (click)="logout()">Log Out</span>
-            &nbsp;
-            &nbsp;
-            &nbsp;
         </md-toolbar>
         <router-outlet class="main"></router-outlet>
     </div>
