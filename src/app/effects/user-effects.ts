@@ -17,7 +17,7 @@ export class UserEffects {
     constructor(private actions$: Actions, private fb: AuthService){};
 
     @Effect()
-    addChef$: Observable<Action> = this.actions$
+    addUser$: Observable<Action> = this.actions$
         .ofType(user_collection.ActionTypes.ADD_USER)
         .map((action: user_collection.AddUserAction) => action.payload)
         .mergeMap(user =>

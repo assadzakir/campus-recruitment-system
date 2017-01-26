@@ -6,13 +6,15 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { authRouting } from './auth.routing';
 import { LoginComponent, SignupComponent, ResetpassComponent } from './auth.component';
+import {MaterialModule} from "@angular/material";
 
 @NgModule({
   imports:      [
     authRouting,
     FormsModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule.forRoot(),
   ],
   declarations: [
     SignupComponent,

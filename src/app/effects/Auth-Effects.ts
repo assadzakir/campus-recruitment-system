@@ -6,6 +6,7 @@ import {Effect, toPayload, Actions } from '@ngrx/effects';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/mergeMap'
 import * as auth_collection from '../actions/auth-action';
+import * as user_collection from '../actions/user-action';
 import {Action} from "@ngrx/store";
 import {UserAuth} from "../model/user-auth";
 import { of } from 'rxjs/observable/of';
@@ -32,7 +33,7 @@ export class AuthEffects {
         .map((action: auth_collection.SignIn) => action.payload)
         .mergeMap(user =>
             this.fb.SignUp(user)
-                .map(() => {new auth_collection.SignUpSuccess(user)})
+                .map(() => new user_collection.AddUserAction(user))
                 .catch(() => of(new auth_collection.SignUpFail(user)))
         );
 

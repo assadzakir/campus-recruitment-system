@@ -21,23 +21,6 @@ export class SignupComponent {
 
   onSubmit(formData) {
     this.store.dispatch(new auth_collection.SignUp(formData.value));
-    // if(formData.valid) {
-    //   console.log(formData.value);
-    //   this.af.auth.createUser({
-    //     email: formData.value.email,
-    //     password: formData.value.password
-    //   }).then(
-    //     (success) => {
-    //       console.log(success);
-    //       this.router.navigate(['/login'])
-    //     }).catch(
-    //     (err) => {
-    //       console.log(err);
-    //       this.router.navigate(['/login']);
-    //     })
-    // } else {
-    //   this.error = 'Your form is invalid';
-    // }
   }
 }
 
@@ -52,23 +35,6 @@ export class LoginComponent {
 
   onSubmit(formData) {
     this.store.dispatch(new auth_collection.SignIn(formData.value));
-    // if(formData.valid) {
-    //   console.log(formData.value);
-    //   this.af.auth.login({
-    //     email: formData.value.email,
-    //     password: formData.value.password
-    //   }).then(
-    //       (success) => {
-    //         console.log(success);
-    //         this.router.navigate(['/dashboard']);
-    //       }).catch(
-    //       (err) => {
-    //         console.log(err);
-    //         this.router.navigate(['/dashboard']);
-    //       })
-    // } else {
-    //   this.error = 'Your form is invalid';
-    // }
   }
 }
 
