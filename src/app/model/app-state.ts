@@ -3,7 +3,9 @@
  */
 
 import {UserAuth} from "./user-auth";
+import {UserI} from "./user-model";
 
 export interface AppState {
     userProfile: UserAuth;
+    user:UserI
 }

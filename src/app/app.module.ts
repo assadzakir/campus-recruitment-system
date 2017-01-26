@@ -11,6 +11,7 @@ import {EffectsModule} from "@ngrx/effects";
 
 import {reducer} from './reducer/index';
 import {AuthEffects} from './effects/Auth-Effects';
+import {UserEffects} from './effects/user-effects';
 
 import { AuthModule } from './components/auth/auth.module';
 import { DashModule } from './components/dashboard/dashboard.module';
@@ -33,6 +34,7 @@ import {AuthService} from "./services/auth-services";
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.runAfterBootstrap(AuthEffects),
+    EffectsModule.runAfterBootstrap(UserEffects),
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,

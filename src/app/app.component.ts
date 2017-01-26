@@ -20,22 +20,22 @@ export class AppComponent {
   }
 
   logout() {
-    this.af.auth.logout();
-    this.router.navigate(['/'])
+    this.store.dispatch(new auth_collection.logOut());
+    // this.router.navigate(['/'])
   }
-  dialogRef: MdDialogRef<LoginComponent>;
+  // dialogRef: MdDialogRef<LoginComponent>;
 
-  openDialog() {
-    this.dialogRef = this.dialog.open(LoginComponent, {
-      disableClose: false
-    });
-
-    this.dialogRef.afterClosed().subscribe(result => {
-      if (result)
-        this.store.dispatch(new auth_collection.SignIn(result));
-      this.dialogRef = null;
-    });
-  }
+  // openDialog() {
+  //   this.dialogRef = this.dialog.open(LoginComponent, {
+  //     disableClose: false
+  //   });
+  //
+  //   this.dialogRef.afterClosed().subscribe(result => {
+  //     if (result)
+  //       this.store.dispatch(new auth_collection.SignIn(result));
+  //     this.dialogRef = null;
+  //   });
+  // }
 
 }
 

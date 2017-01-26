@@ -11,6 +11,9 @@ export const ActionTypes = {
     SIGN_UP:                 'SIGN_UP',
     SIGN_UP_FAIL:            'SIGN_UP_FAIL',
     SIGN_UP_SUCCESS:         'SIGN_UP_SUCCESS',
+    LOG_OUT:                'LOG_OUT',
+    LOG_OUT_SUCCESS:        'LOG_OUT_SUCCESS',
+    LOG_OUT_FAIL:           'LOG_OUT_FAIL',
 };
 
 /**
@@ -51,6 +54,24 @@ export class SignUpFail implements Action {
     constructor(public payload: UserAuth) { }
 }
 
+export class logOut implements Action {
+    type = ActionTypes.LOG_OUT;
+
+    constructor(public payload?: UserAuth) { }
+}
+
+export class logOutSuccess implements Action {
+    type = ActionTypes.LOG_OUT_SUCCESS;
+
+    constructor(public payload: UserAuth) { }
+}
+
+export class logOutFail implements Action {
+    type = ActionTypes.LOG_OUT_FAIL;
+
+    constructor(public payload: UserAuth) { }
+}
+
 export type Actions
     = SignIn
     | SignInSuccess
@@ -58,3 +79,6 @@ export type Actions
     | SignUp
     | SignUpSuccess
     | SignUpFail
+    | logOut
+    | logOutSuccess
+    | logOutFail

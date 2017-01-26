@@ -26,5 +26,25 @@ export class AuthEffects {
                 .catch(() => of(new auth_collection.SignInFail(user)))
         );
 
+    @Effect()
+    SignUp$: Observable<Action> = this.actions$
+        .ofType(auth_collection.ActionTypes.SIGN_UP)
+        .map((action: auth_collection.SignIn) => action.payload)
+        .mergeMap(user =>
+            this.fb.SignUp(user)
+                .map(() => {new auth_collection.SignUpSuccess(user)})
+                .catch(() => of(new auth_collection.SignUpFail(user)))
+        );
+
+    @Effect()
+    LogOut$: Observable<Action> = this.actions$
+        .ofType(auth_collection.ActionTypes.LOG_OUT)
+        .map((action: auth_collection.SignIn) => action.payload)
+        .mergeMap(user =>
+            this.fb.logout()
+                .map(() => new auth_collection.logOutSuccess(user))
+                .catch(() => of(new auth_collection.logOutFail(user)))
+        );
+
 
 }
